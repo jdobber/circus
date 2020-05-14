@@ -1,0 +1,9 @@
+type Person {
+    "An agent in person."
+    title: String
+    name: String
+}
+
+type Query {
+    persons: [Person]!
+}

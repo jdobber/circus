@@ -1,0 +1,22 @@
+{
+    "env": {
+        "doc": "The application environment.",
+        "format": ["production", "development", "test", "preprod", "easydb"],
+        "default": "development",
+        "env": "NODE_ENV"
+    },
+    "server": {
+        "host": {
+            "doc": "The IP address to bind",
+            "format": "ipaddress",
+            "default": "127.0.0.1",
+            "env": "SERVICE_HOST"
+        },
+        "port": {
+            "doc": "The port to bind.",
+            "format": "port",
+            "default": 3000,
+            "env": "SERVICE_PORT"
+        }
+    }
+}
