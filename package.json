@@ -12,6 +12,7 @@
         "prettier:write": "prettier --config ./.prettierrc --write '{src,__{tests,mocks}__}/**/*.js'"
     },
     "dependencies": {
+        "@iarna/toml": "^2.2.5",
         "apollo-server-fastify": "^2.13.1",
         "convict": "^6.0.0",
         "convict-format-with-validator": "^6.0.0",
