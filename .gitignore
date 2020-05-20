@@ -4,4 +4,6 @@ node_modules
 yarn-error.log
 .yarnrc
 
+.nyc_output/
+
 config/**/*.toml

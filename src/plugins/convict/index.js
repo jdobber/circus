@@ -1,5 +1,6 @@
 import fp from "fastify-plugin";
 import fs from "fs";
+import PATH from "path";
 import TOML from "@iarna/toml";
 
 // load convict
@@ -8,15 +9,19 @@ import convict_format_with_validator from "convict-format-with-validator";
 convict.addFormats(convict_format_with_validator);
 convict.addParser({ extension: "toml", parse: TOML.parse });
 
-async function fastifyConvict(fastify, { schema, format = "json" }, done) {
+async function fastifyConvict(fastify, options, done) {
     try {
+        let { path, schema, format = "json" } = options;
+
         // Define a schema
 
-        let config = convict(JSON.parse(fs.readFileSync(schema, "utf-8")));
+        let config = convict(
+            JSON.parse(fs.readFileSync(PATH.join(path, schema), "utf-8"))
+        );
 
         // Load environment dependent configuration
         let env = config.get("env");
-        let config_file = `./config/${env}.${format}`;
+        let config_file = PATH.join(path, `${env}.${format}`);
 
         fastify.log.info("Load configuration: ", config_file);
 

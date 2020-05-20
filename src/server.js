@@ -18,7 +18,8 @@ fastify.register(import("fastify-cors"));
 
 // Register configuration plugin
 fastify.register(import("./plugins/convict"), {
-    schema: path.join(__dirname, "../config/server.schema.json"),
+    path: "./config",
+    schema: "server.schema.json",
     format: "toml"
 });
 

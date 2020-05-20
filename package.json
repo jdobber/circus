@@ -9,7 +9,8 @@
         "dev:watch": "nodemon -r esm --watch src --watch config src/server.js",
         "lint": "eslint src/**",
         "prettier:check": "prettier --config ./.prettierrc --check '{src,__{tests,mocks}__}/**/*.js'",
-        "prettier:write": "prettier --config ./.prettierrc --write '{src,__{tests,mocks}__}/**/*.js'"
+        "prettier:write": "prettier --config ./.prettierrc --write '{src,__{tests,mocks}__}/**/*.js'",
+        "test": "tap --test-env=NODE_ENV=test src/**/test/*.js"
     },
     "dependencies": {
         "@iarna/toml": "^2.2.5",
@@ -25,7 +26,8 @@
         "graphql": "^14.0.0",
         "graphql-tag": "^2.10.3",
         "merge-graphql-schemas": "^1.7.8",
-        "pino-pretty": "^4.0.0"
+        "pino-pretty": "^4.0.0",
+        "tap": "^14.10.7"
     },
     "devDependencies": {
         "eslint": "^7.0.0",
