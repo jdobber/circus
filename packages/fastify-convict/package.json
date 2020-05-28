@@ -1,0 +1,41 @@
+{
+    "name": "fastify-convict",
+    "version": "1.0.0",
+    "description": "Use convict with fastify for configuration.",
+    "keywords": [
+        "fastify",
+        "convict"
+    ],
+    "author": "Jens Dobberthin <jens.dobberthin@mfn.berlin>",
+    "homepage": "https://github.com/jdobber/circus#readme",
+    "license": "ISC",
+    "main": "lib/fastify-convict.js",
+    "directories": {
+        "lib": "lib",
+        "test": "__tests__"
+    },
+    "files": [
+        "lib"
+    ],
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/jdobber/circus.git"
+    },
+    "scripts": {
+        "test": "tap --test-env=NODE_ENV=test __tests__/*.js --reporter=specy "
+    },
+    "bugs": {
+        "url": "https://github.com/jdobber/circus/issues"
+    },
+    "devDependencies": {
+        "eslint": "^7.1.0",
+        "tap": "^14.10.7"
+    },
+    "dependencies": {
+        "@iarna/toml": "^2.2.5",
+        "convict": "^6.0.0",
+        "convict-format-with-validator": "^6.0.0",
+        "fastify": "^2.14.1",
+        "fastify-plugin": "^1.6.1"
+    }
+}

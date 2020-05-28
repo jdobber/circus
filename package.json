@@ -6,40 +6,25 @@
     "author": "Jens Dobberthin",
     "license": "MIT",
     "scripts": {
-        "dev:watch": "nodemon -r esm --watch src --watch config src/server.js",
-        "lint": "eslint src/**",
-        "prettier:check": "prettier --config ./.prettierrc --check '{src,__{tests,mocks}__}/**/*.js'",
-        "prettier:write": "prettier --config ./.prettierrc --write '{src,__{tests,mocks}__}/**/*.js'",
-        "test": "tap --test-env=NODE_ENV=test src/**/test/*.js"
-    },
-    "dependencies": {
-        "@iarna/toml": "^2.2.5",
-        "apollo-server-fastify": "^2.13.1",
-        "convict": "^6.0.0",
-        "convict-format-with-validator": "^6.0.0",
-        "esm": "^3.2.25",
-        "fastify": "^2.14.1",
-        "fastify-blipp": "^2.3.1",
-        "fastify-cors": "^3.0.3",
-        "fastify-plugin": "^1.6.1",
-        "fastify-url-data": "^2.4.0",
-        "graphql": "^14.0.0",
-        "graphql-tag": "^2.10.3",
-        "merge-graphql-schemas": "^1.7.8",
-        "pino-pretty": "^4.0.0",
-        "tap": "^14.10.7"
+        "server:dev:watch": "cd server && yarn run server:dev:watch",
+        "lint": "eslint .",
+        "prettier:check": "prettier --config ./.prettierrc --check '{packages,server,services}/**/{lib,__{tests,mocks}__}/**/*.(js|gql)'",
+        "prettier:write": "prettier --config ./.prettierrc --write '{packages,server,services}/**/{lib,__{tests,mocks}__}/**/*.(js|gql)'"
     },
     "devDependencies": {
-        "eslint": "^7.0.0",
         "husky": "^4.2.5",
-        "nodemon": "^2.0.3",
-        "prettier": "2.0.5",
-        "pretty-quick": "^2.0.1",
-        "standard": "^14.3.4"
+        "lerna": "^3.21.0",
+        "prettier": "^2.0.5"
     },
     "husky": {
         "hooks": {
             "pre-commit": "pretty-quick --staged"
         }
-    }
+    },
+    "workspaces": [
+        "packages/*",
+        "services/*",
+        "server"
+    ],
+    "private": true
 }

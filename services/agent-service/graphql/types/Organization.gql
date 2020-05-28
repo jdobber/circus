@@ -1,0 +1,8 @@
+type Organization {
+    "An organization."
+    name: String
+}
+
+type Query {
+    organizations: [Organization]!
+}

@@ -1,0 +1,31 @@
+{
+    "name": "agent-service",
+    "version": "1.0.0",
+    "description": "...",
+    "keywords": [
+        "fastify"
+    ],
+    "author": "Jens Dobberthin <jens.dobberthin@mfn.berlin>",
+    "homepage": "https://github.com/jdobber/circus#readme",
+    "license": "ISC",
+    "main": "lib/index.js",
+    "directories": {
+        "lib": "lib",
+        "test": "__tests__"
+    },
+    "files": [
+        "lib"
+    ],
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/jdobber/circus.git"
+    },
+    "scripts": {},
+    "bugs": {
+        "url": "https://github.com/jdobber/circus/issues"
+    },
+    "devDependencies": {
+        "tap": "^14.10.7"
+    },
+    "dependencies": {}
+}
