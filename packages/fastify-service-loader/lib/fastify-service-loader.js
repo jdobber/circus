@@ -9,7 +9,10 @@ async function fastifyServiceLoader(fastify, { name, path }, done) {
 
         const apollo = new ApolloServer({
             typeDefs: loadTypes(path),
-            resolvers: loadResolvers(path)
+            resolvers: loadResolvers(path),
+            context: {
+                fastify: fastify
+            }
         });
         fastify.register(apollo.createHandler(name), {
             prefix: name

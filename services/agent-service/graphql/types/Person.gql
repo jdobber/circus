@@ -1,9 +1,27 @@
 type Person {
     "An agent in person."
+    id: ID
     title: String
     name: String
 }
 
+input PersonInput {
+    title: String
+    name: String
+}
+
+type AddPersonResponse {
+    person: Person
+}
+
+input AddPersonInput {
+    person: PersonInput
+}
+
 type Query {
     persons: [Person]!
+}
+
+type Mutation {
+    addPerson(input: AddPersonInput!): AddPersonResponse
 }

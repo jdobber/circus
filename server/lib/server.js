@@ -24,7 +24,9 @@ fastify.register(import("fastify-convict"), {
 });
 
 // Register services
-fastify.register(import("agent-service"));
+fastify.register(import("agent-service"), parent => {
+    return { config: parent.convict };
+});
 //fastify.register(import("./services/book-service"));
 
 // Routes

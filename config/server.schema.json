@@ -18,5 +18,17 @@
             "default": 3000,
             "env": "SERVICE_PORT"
         }
+    },
+    "arangodb": {
+        "url": {
+            "doc": "The remote url of ArangoDB.",
+            "format": "String",
+            "default": "http://localhost:8529"
+        },
+        "database": {
+            "doc": "The database to use.",
+            "format": "String",
+            "default": "_system"
+        }
     }
 }

@@ -27,5 +27,7 @@
     "devDependencies": {
         "tap": "^14.10.7"
     },
-    "dependencies": {}
+    "dependencies": {
+        "arangojs": "^6.14.1"
+    }
 }
